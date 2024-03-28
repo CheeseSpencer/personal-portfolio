@@ -172,6 +172,7 @@ footer {
 
 #about p {
     position: relative;
+    text-align: justify;
 }
 
 /* portfolio section */
