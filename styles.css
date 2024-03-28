@@ -1,0 +1,297 @@
+:root {
+    /* San carlos pictures colors
+    --primary: #A85B5C;
+    --onPrimary: #120E20;
+    --secondary: #120E20;
+    --onSecondary: #B1B6B8;
+    --tertiary: #9DB19D;
+    --detail: #B1B6B8;
+    949DAE
+    */
+
+    --primary: #9DB19D;
+    --primaryTrans: #9DB19DCC;
+    --onPrimary: #464842;
+    --secondary: #464842;
+    --onSecondary: #9DB19D;
+    --tertiary: #949DAE;
+    --detail: #C6CBB7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition: 500ms;
+}
+
+body {
+    background-color: var(--detail);
+    color: var(--onPrimary);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: darkslateblue;
+}
+
+h2 {
+    filter: drop-shadow(0 0 2px var(--primary));
+}
+
+/* header styling */
+header {
+    background-image: url("header_background_greeny.jpg");
+    background-repeat: no-repeat;
+    height: 200px;
+    background-size: cover;
+    position: relative;
+}
+
+header h1 {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: var(--detail);
+    filter: drop-shadow(0 0 3px var(--secondary));
+}
+
+/* nav bar styling - flexbox */
+nav {
+    position: fixed;
+    z-index: 1;
+    background-color: var(--primaryTrans);
+    top: 0;
+    right: 0;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+    flex-flow: column;
+    align-items: end;
+}
+
+nav a {
+    text-align: center;
+    display: block;
+    color: var(--onPrimary);
+    padding: 8px;
+    text-decoration: none;
+}
+
+nav a.active {
+    background-color: var(--secondary);
+    color: var(--onSecondary);
+}
+
+nav a:hover {
+    background-color: var(--tertiary);
+    color: var(--onPrimary);
+}
+
+.menu-icon {
+    display: block;
+    padding: 9px 8px 7px 8px;
+}
+
+.menu-icon:hover {
+    background-color: var(--tertiary);
+    cursor: pointer;
+}
+
+.menu-icon img {
+    height: 14px;
+    width: 20px;
+    filter: brightness(0) saturate(100%) invert(26%) sepia(25%) saturate(130%) hue-rotate(39deg) brightness(89%) contrast(87%);
+}
+
+@media only screen and (max-width: 800px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .hamburger a {
+        display: none;
+    }
+
+    .open a {
+        display: block;
+    }
+
+    .open .menu-icon img {
+        transform: rotate(-90deg);
+    }
+}
+
+/* footer styling */
+footer {
+    min-height: 60px;
+    background-color: var(--primary);
+    position: relative;
+    text-align: center;
+    padding: 2%;
+}
+
+/* about section */
+#about {
+    display: grid;
+    grid-template-areas:
+        'profile-pic about-header'
+        'profile-pic about-text'
+        'profile-pic about-text'
+        'profile-pic about-text'
+        'profile-pic about-text';
+    gap: 5%;
+    padding: 10px;
+    margin: 50px;
+    text-align: left;
+}
+
+#about h2 {
+    position: relative;
+    grid-area: about-header;
+    align-self: end;
+}
+
+#about p {
+    position: relative;
+    grid-area: about-text;
+    max-width: 400px;
+}
+
+#about img {
+    position: relative;
+    grid-area: profile-pic;
+    max-width: 400px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px var(--primary));
+    justify-self: end;
+}
+
+/* portfolio section */
+#portfolio h2 {
+    text-align: center;
+    padding: 15px 15px 5px;
+}
+
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 15px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.project {
+    width: 200px;
+    max-width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 15px;
+    border: 4px solid white;
+    border-radius: 2px;
+}
+
+.project:hover {
+    border: 4px dotted var(--tertiary);
+    cursor: pointer;
+}
+
+.project img {
+    width: 100%;
+}
+
+.project p {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+/* contacts section */
+a img {
+    width: 3%;
+    max-width: 30px;
+    min-width: 5px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(26%) sepia(25%) saturate(130%) hue-rotate(39deg) brightness(89%) contrast(87%);
+}
+
+#contacts {
+    margin: 35px;
+    text-align: center;
+}
+
+#contacts h2 {
+    text-align: center;
+    padding: 15px;
+}
+
+#contacts p {
+    margin: 15px;
+}
+
+/* Popup styling */
+.window {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+.popup-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 30%;
+    border-radius: 2px;
+}
+.popup-content button {
+    display: block;
+    margin: 10px auto;
+}
+
+.show {
+    display: block;
+}
+
+.popup-content h2 {
+    text-align: center;
+    margin: 15px;
+}
+
+.popup-content p {
+    text-align: center;
+    margin: 20px;
+}
+
+.open-window {
+    padding: 4% 8%;
+    border: none;
+    background-color: var(--primary);
+    color: var(--onPrimary);
+    border-radius: 2px;
+}
+
+.open-window:hover {
+    cursor: pointer;
+    background-color: var(--secondary);
+    color: var(--onSecondary);
+}
