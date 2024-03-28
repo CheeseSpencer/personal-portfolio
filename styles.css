@@ -149,38 +149,29 @@ footer {
 
 /* about section */
 #about {
-    display: grid;
-    grid-template-areas:
-        'profile-pic about-header'
-        'profile-pic about-text'
-        'profile-pic about-text'
-        'profile-pic about-text'
-        'profile-pic about-text';
-    gap: 5%;
     padding: 10px;
     margin: 50px;
     text-align: left;
 }
 
+#about img {
+    float: left;
+    max-width: 400px;
+    min-width: 200px;
+    width: 40%;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px var(--primary));
+    margin-right: 40px;
+    margin-bottom: 20px;
+}
+
 #about h2 {
     position: relative;
-    grid-area: about-header;
-    align-self: end;
+    margin-bottom: 20px;
 }
 
 #about p {
     position: relative;
-    grid-area: about-text;
-    max-width: 400px;
-}
-
-#about img {
-    position: relative;
-    grid-area: profile-pic;
-    max-width: 400px;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 10px var(--primary));
-    justify-self: end;
 }
 
 /* portfolio section */
